@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Jetpack Compose Material</string>
+    <string name="dark_mode">Set dark mode</string>
+</resources>
