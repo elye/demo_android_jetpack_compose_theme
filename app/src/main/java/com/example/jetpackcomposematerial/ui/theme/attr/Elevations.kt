@@ -1,4 +1,4 @@
-package com.example.jetpackcomposematerial.ui.theme
+package com.example.jetpackcomposematerial.ui.theme.attr
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
