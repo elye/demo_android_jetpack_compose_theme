@@ -9,10 +9,10 @@ import androidx.compose.material.Checkbox
 import androidx.compose.material.RadioButton
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposematerial.R
 import com.example.jetpackcomposematerial.ui.components.ThemeType.*
 import com.example.jetpackcomposematerial.ui.theme.JetpackComposeMaterialTheme
