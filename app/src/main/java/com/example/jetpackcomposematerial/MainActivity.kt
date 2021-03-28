@@ -3,12 +3,16 @@ package com.example.jetpackcomposematerial
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material.*
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.core.view.WindowCompat
 import com.example.jetpackcomposematerial.ui.components.OverallView
 import com.example.jetpackcomposematerial.ui.components.ThemeType.*
-import com.example.jetpackcomposematerial.ui.theme.*
+import com.example.jetpackcomposematerial.ui.theme.BlueTheme
+import com.example.jetpackcomposematerial.ui.theme.PinkTheme
+import com.example.jetpackcomposematerial.ui.theme.PurpleTheme
+import com.example.jetpackcomposematerial.ui.theme.YellowTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
