@@ -10,7 +10,7 @@ private val PinkDarkColorPalette = darkColors(
     primary = pink500,
     secondary = yellow200,
     primaryVariant = pink600,
-    onPrimary = Color.Black,
+    onPrimary = Color.White,
     surface = pinkDarkPrimary
 )
 

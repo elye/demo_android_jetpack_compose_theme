@@ -1,23 +1,27 @@
 package com.example.jetpackcomposematerial
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusModifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import com.example.jetpackcomposematerial.ui.components.MainView
 import com.example.jetpackcomposematerial.ui.components.SettingView
 import com.example.jetpackcomposematerial.ui.components.ThemeType
 import com.example.jetpackcomposematerial.ui.components.ThemeType.*
 import com.example.jetpackcomposematerial.ui.theme.*
-import dev.chrisbanes.accompanist.insets.*
+import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
+import dev.chrisbanes.accompanist.insets.navigationBarsPadding
+import dev.chrisbanes.accompanist.insets.statusBarsPadding
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,24 +57,55 @@ class MainActivity : ComponentActivity() {
         themeType: MutableState<ThemeType>
     ) {
         ProvideWindowInsets {
-            Surface(modifier = Modifier.fillMaxSize()) {
-                Column {
-                    Spacer(
-                        modifier = Modifier
-                            .background(color = JetpackComposeMaterialTheme.colors.primaryVariant)
-                            .fillMaxWidth()
-                            .statusBarsPadding()
-                    )
-                    SettingView(darkMode = darkMode, themeType = themeType)
-                    MainView(Modifier.weight(1f))
-                    Spacer(
-                        modifier = Modifier
-                            .background(color = JetpackComposeMaterialTheme.colors.primaryVariant)
-                            .fillMaxWidth()
-                            .navigationBarsPadding()
-                    )
+            Column {
+                Scaffold(
+                    modifier = Modifier.weight(1f),
+                    topBar = { MyTopAppBar(themeType.value) },
+                    isFloatingActionButtonDocked = true,
+                    floatingActionButton = { MyFloatingButton() }
+                ) {
+                    Surface(modifier = Modifier.fillMaxWidth()) {
+                        Column (modifier = Modifier.padding(
+                            JetpackComposeMaterialTheme.paddings.largePadding
+                        )){
+                            SettingView(darkMode = darkMode, themeType = themeType)
+                            MainView(Modifier.weight(1f))
+                        }
+                    }
                 }
+                Spacer(
+                    modifier = Modifier
+                        .background(color = JetpackComposeMaterialTheme.colors.primaryVariant)
+                        .fillMaxWidth()
+                        .navigationBarsPadding()
+                )
             }
         }
+    }
+}
+
+
+@Composable
+fun MyTopAppBar(theme: ThemeType) {
+    Column {
+        Spacer(
+            modifier = Modifier
+                .background(color = JetpackComposeMaterialTheme.colors.primaryVariant)
+                .fillMaxWidth()
+                .statusBarsPadding()
+        )
+        TopAppBar(
+            title = { Text(theme.name) },
+            backgroundColor = JetpackComposeMaterialTheme.colors.primary
+        )
+    }
+}
+
+@Composable
+fun MyFloatingButton() {
+    val scope = rememberCoroutineScope()
+    FloatingActionButton(onClick = {
+    }) {
+        Text("X")
     }
 }

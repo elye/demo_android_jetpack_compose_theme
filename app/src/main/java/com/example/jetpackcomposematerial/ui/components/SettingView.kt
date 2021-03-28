@@ -3,9 +3,11 @@ package com.example.jetpackcomposematerial.ui.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Checkbox
 import androidx.compose.material.RadioButton
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -21,18 +23,13 @@ fun SettingView(
     darkMode: MutableState<Boolean>,
     themeType: MutableState<ThemeType>
 ) {
-    Column(
-        modifier = modifier
-            .padding(
-                JetpackComposeMaterialTheme.paddings.largePadding,
-                JetpackComposeMaterialTheme.paddings.largePadding,
-                JetpackComposeMaterialTheme.paddings.largePadding,
-                0.dp
-            )
-    ) {
-        DarkModeCheckBox(darkMode)
-        SmallSpacer()
-        ThemePickRadioGroup(themeType)
+    Surface(modifier = modifier.fillMaxWidth()) {
+        Column{
+            DarkModeCheckBox(darkMode)
+            SmallSpacer()
+            ThemePickRadioGroup(themeType)
+            LargeSpacer()
+        }
     }
 }
 

@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.example.jetpackcomposematerial.ui.theme.JetpackComposeMaterialTheme
 
 @Composable
@@ -15,7 +16,6 @@ fun MainView(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(JetpackComposeMaterialTheme.paddings.largePadding)
         ) {
             CardSurface(
                 color = JetpackComposeMaterialTheme.colors.primary,
@@ -35,6 +35,11 @@ fun MainView(modifier: Modifier = Modifier) {
             CardSurface(
                 color = JetpackComposeMaterialTheme.colors.secondaryVariant,
                 text = "Secondary Variant"
+            )
+            NormalSpacer()
+            CardSurface(
+                color = JetpackComposeMaterialTheme.colors.error,
+                text = "Error"
             )
         }
     }

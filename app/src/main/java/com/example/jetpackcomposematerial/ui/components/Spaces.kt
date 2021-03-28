@@ -7,6 +7,11 @@ import androidx.compose.ui.Modifier
 import com.example.jetpackcomposematerial.ui.theme.JetpackComposeMaterialTheme
 
 @Composable
+fun LargeSpacer() {
+    Spacer(modifier = Modifier.size(JetpackComposeMaterialTheme.paddings.largePadding))
+}
+
+@Composable
 fun NormalSpacer() {
     Spacer(modifier = Modifier.size(JetpackComposeMaterialTheme.paddings.defaultPadding))
 }
