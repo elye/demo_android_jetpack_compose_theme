@@ -10,8 +10,8 @@ import androidx.compose.ui.graphics.Color
 import com.example.jetpackcomposematerial.ui.theme.JetpackComposeMaterialTheme
 
 @Composable
-fun MainView() {
-    Surface(modifier = Modifier.fillMaxSize()) {
+fun MainView(modifier: Modifier = Modifier) {
+    Surface(modifier = modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
                 .fillMaxSize()

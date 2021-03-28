@@ -32,7 +32,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun JetpactComposeBootcampTheme(
+fun JetpackComposeMaterialTheme(
     lightColorPalette: Colors,
     darkColorPalette: Colors,
     darkTheme: Boolean = isSystemInDarkTheme(),

@@ -17,11 +17,12 @@ import com.example.jetpackcomposematerial.ui.theme.JetpackComposeMaterialTheme
 
 @Composable
 fun SettingView(
+    modifier: Modifier = Modifier,
     darkMode: MutableState<Boolean>,
     themeType: MutableState<ThemeType>
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .padding(
                 JetpackComposeMaterialTheme.paddings.largePadding,
                 JetpackComposeMaterialTheme.paddings.largePadding,

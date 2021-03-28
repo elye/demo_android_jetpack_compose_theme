@@ -31,7 +31,7 @@ fun YellowTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable() () -> Unit
 ) {
-    JetpactComposeBootcampTheme(
+    JetpackComposeMaterialTheme(
         lightColorPalette = YellowLightColorPalette,
         darkColorPalette = YellowDarkColorPalette,
         darkTheme = darkTheme,
