@@ -81,7 +81,23 @@ dependencies {
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.ui:ui-tooling:$compose_version"
 
-    implementation 'dev.chrisbanes.accompanist:accompanist-insets:0.6.2'
+//TODO  chrisbanes now work for Google !! so  com.google.accompanist replace dev.chrisbanes.accompanist
+//    implementation 'dev.chrisbanes.accompanist:accompanist-insets:0.6.2'
+//over compose_version = '1.0.0-beta06' some super class is different !!
+// Ref : https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.0.0-beta07
+    implementation "com.google.accompanist:accompanist-insets:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-appcompat-theme:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-coil:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-flowlayout:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-glide:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-imageloading-core:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-insets-ui:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-pager-indicators:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-pager:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-placeholder:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-placeholder-material:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-swiperefresh:$compose_accompanist_version"
+//    implementation "com.google.accompanist:accompanist-systemuicontroller:$compose_accompanist_version"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
